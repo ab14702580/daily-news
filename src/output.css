@@ -1054,6 +1054,9 @@
   .z-1 {
     z-index: 1;
   }
+  .z-50 {
+    z-index: 50;
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -1453,6 +1456,16 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
+    }
+  }
+  .xl\:w-\[1400px\] {
+    @media (width >= 80rem) {
+      width: 1400px;
+    }
+  }
+  .xl\:max-w-\[1400px\] {
+    @media (width >= 80rem) {
+      max-width: 1400px;
     }
   }
 }
