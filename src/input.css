@@ -1,3 +1,7 @@
+@font-face{
+  font-family: 'CustomFont';
+  src: url("../fonts/SolaimanLipi.ttf");
+}
 @import "tailwindcss";
 @plugin "daisyui";
  @plugin "daisyui" {
@@ -5,4 +9,7 @@
  }
  @utility btn {
    @apply bg-white text-black;
+ }
+ @theme{
+  --font-bangla: 'CustomFont', sans-serif;
  }
