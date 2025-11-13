@@ -2325,6 +2325,9 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -2601,6 +2604,9 @@
   .w-52 {
     width: calc(var(--spacing) * 52);
   }
+  .w-\[50\%\] {
+    width: 50%;
+  }
   .w-full {
     width: 100%;
   }
@@ -2704,6 +2710,9 @@
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -2715,6 +2724,27 @@
   }
   .grid-rows-4 {
     grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+  .grid-rows-\[1fr\] {
+    grid-template-rows: 1fr;
+  }
+  .grid-rows-\[1fr_\] {
+    grid-template-rows: 1fr ;
+  }
+  .grid-rows-\[1fr_minmax\(\)\] {
+    grid-template-rows: 1fr minmax();
+  }
+  .grid-rows-\[1fr_minmax\(2\)\] {
+    grid-template-rows: 1fr minmax(2);
+  }
+  .grid-rows-\[1fr_minmax\(100px\,\)\] {
+    grid-template-rows: 1fr minmax(100px,);
+  }
+  .grid-rows-\[1fr_minmax\(100px\,200px\)\] {
+    grid-template-rows: 1fr minmax(100px,200px);
+  }
+  .grid-rows-\[1fr_minmax\(100px\,300px\)\] {
+    grid-template-rows: 1fr minmax(100px,300px);
   }
   .flex-col {
     flex-direction: column;
@@ -2795,6 +2825,10 @@
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
+  }
+  .border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
   }
   .border-\[\#cfcbcb\] {
     border-color: #cfcbcb;
@@ -2893,6 +2927,9 @@
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
   }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
+  }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -2901,6 +2938,9 @@
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-5 {
+    padding-bottom: calc(var(--spacing) * 5);
   }
   .text-center {
     text-align: center;
@@ -3140,6 +3180,11 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
+    }
+  }
+  .xl\:max-w-\[1300px\] {
+    @media (width >= 80rem) {
+      max-width: 1300px;
     }
   }
   .xl\:max-w-\[1400px\] {
