@@ -1,4 +1,9 @@
+@font-face {
+    font-family: "SolaimanLipi";
+    src: url('../font/SolaimanLipi.ttf') format('TrueType');
+}
 @import "tailwindcss";
 @theme{
     --breakpoint-nin: 900px;
+    --font-lipi: "SolaimanLipi",sans-serif;
 }
