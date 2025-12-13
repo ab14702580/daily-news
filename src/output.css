@@ -297,6 +297,9 @@
   .table {
     display: table;
   }
+  .h-\[100px\] {
+    height: 100px;
+  }
   .h-\[300px\] {
     height: 300px;
   }
