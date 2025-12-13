@@ -209,6 +209,21 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .-bottom-2 {
+    bottom: calc(var(--spacing) * -2);
+  }
+  .-bottom-5 {
+    bottom: calc(var(--spacing) * -5);
+  }
+  .-bottom-8 {
+    bottom: calc(var(--spacing) * -8);
+  }
+  .-bottom-12 {
+    bottom: calc(var(--spacing) * -12);
+  }
+  .-bottom-16 {
+    bottom: calc(var(--spacing) * -16);
+  }
   .bottom-2 {
     bottom: calc(var(--spacing) * 2);
   }
@@ -326,6 +341,9 @@
   .inline-block {
     display: inline-block;
   }
+  .table {
+    display: table;
+  }
   .h-\[100px\] {
     height: 100px;
   }
@@ -340,6 +358,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .max-w-1 {
+    max-width: calc(var(--spacing) * 1);
   }
   .max-w-1\/2 {
     max-width: calc(1/2 * 100%);
@@ -359,11 +380,17 @@
   .min-w-\[160px\] {
     min-width: 160px;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
   .rotate-90 {
     rotate: 90deg;
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -535,6 +562,18 @@
   .text-white {
     color: var(--color-white);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -563,6 +602,22 @@
     &:is(:where(.group\/childItems):hover *) {
       @media (hover: hover) {
         background-color: var(--color-gray-300);
+      }
+    }
+  }
+  .group-hover\/inside\:bottom-2 {
+    &:is(:where(.group\/inside):hover *) {
+      @media (hover: hover) {
+        bottom: calc(var(--spacing) * 2);
+      }
+    }
+  }
+  .group-hover\/inside\:transition-all {
+    &:is(:where(.group\/inside):hover *) {
+      @media (hover: hover) {
+        transition-property: all;
+        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+        transition-duration: var(--tw-duration, var(--default-transition-duration));
       }
     }
   }
@@ -608,6 +663,18 @@
       border-radius: var(--radius-xl);
     }
   }
+  .before\:bg-orange-800 {
+    &::before {
+      content: var(--tw-content);
+      background-color: var(--color-orange-800);
+    }
+  }
+  .before\:bg-transparent {
+    &::before {
+      content: var(--tw-content);
+      background-color: transparent;
+    }
+  }
   .before\:bg-linear-to-t {
     &::before {
       content: var(--tw-content);
@@ -636,6 +703,13 @@
     &::before {
       content: var(--tw-content);
       --tw-gradient-from: var(--color-orange-800);
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+  }
+  .before\:from-transparent {
+    &::before {
+      content: var(--tw-content);
+      --tw-gradient-from: transparent;
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
   }
@@ -748,6 +822,100 @@
       opacity: 50%;
     }
   }
+  .before\:transition {
+    &::before {
+      content: var(--tw-content);
+      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+    }
+  }
+  .before\:transition-all {
+    &::before {
+      content: var(--tw-content);
+      transition-property: all;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+    }
+  }
+  .before\:transition-colors {
+    &::before {
+      content: var(--tw-content);
+      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+    }
+  }
+  .group-hover\:before\:bg-linear-to-t {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-position: to top;
+          @supports (background-image: linear-gradient(in lab, red, red)) {
+            --tw-gradient-position: to top in oklab;
+          }
+          background-image: linear-gradient(var(--tw-gradient-stops));
+        }
+      }
+    }
+  }
+  .group-hover\/inside\:before\:bg-linear-to-t {
+    &:is(:where(.group\/inside):hover *) {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-position: to top;
+          @supports (background-image: linear-gradient(in lab, red, red)) {
+            --tw-gradient-position: to top in oklab;
+          }
+          background-image: linear-gradient(var(--tw-gradient-stops));
+        }
+      }
+    }
+  }
+  .group-hover\/inside\:before\:from-black {
+    &:is(:where(.group\/inside):hover *) {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-from: var(--color-black);
+          --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+        }
+      }
+    }
+  }
+  .group-hover\/inside\:before\:from-10\% {
+    &:is(:where(.group\/inside):hover *) {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-from-position: 10%;
+        }
+      }
+    }
+  }
+  .group-hover\/inside\:before\:to-transparent {
+    &:is(:where(.group\/inside):hover *) {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-to: transparent;
+          --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+        }
+      }
+    }
+  }
+  .group-hover\/inside\:before\:to-90\% {
+    &:is(:where(.group\/inside):hover *) {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-to-position: 90%;
+        }
+      }
+    }
+  }
   .hover\:visible {
     &:hover {
       @media (hover: hover) {
@@ -780,6 +948,62 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-white);
+      }
+    }
+  }
+  .hover\:before\:bg-linear-to-t {
+    &:hover {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-position: to top;
+          @supports (background-image: linear-gradient(in lab, red, red)) {
+            --tw-gradient-position: to top in oklab;
+          }
+          background-image: linear-gradient(var(--tw-gradient-stops));
+        }
+      }
+    }
+  }
+  .hover\:before\:from-black {
+    &:hover {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-from: var(--color-black);
+          --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+        }
+      }
+    }
+  }
+  .hover\:before\:from-10\% {
+    &:hover {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-from-position: 10%;
+        }
+      }
+    }
+  }
+  .hover\:before\:to-transparent {
+    &:hover {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-to: transparent;
+          --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+        }
+      }
+    }
+  }
+  .hover\:before\:to-90\% {
+    &:hover {
+      @media (hover: hover) {
+        &::before {
+          content: var(--tw-content);
+          --tw-gradient-to-position: 90%;
+        }
       }
     }
   }
@@ -1207,6 +1431,11 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-content {
   syntax: "*";
   initial-value: "";
@@ -1259,6 +1488,7 @@
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
       --tw-content: "";
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
