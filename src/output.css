@@ -683,6 +683,12 @@
       border-right-width: 1px;
     }
   }
+  .nin\:border-r-0 {
+    @media (width >= 900px) {
+      border-right-style: var(--tw-border-style);
+      border-right-width: 0px;
+    }
+  }
   .nin\:border-b {
     @media (width >= 900px) {
       border-bottom-style: var(--tw-border-style);
