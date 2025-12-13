@@ -5,5 +5,7 @@
 @import "tailwindcss";
 @theme{
     --breakpoint-nin: 900px;
+    --breakpoint-sd: 480px;
+    --breakpoint-st: 440px;
     --font-lipi: "SolaimanLipi",sans-serif;
 }
