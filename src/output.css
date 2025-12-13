@@ -297,6 +297,9 @@
   .table {
     display: table;
   }
+  .h-\[300px\] {
+    height: 300px;
+  }
   .h-\[700px\] {
     height: 700px;
   }
@@ -594,6 +597,16 @@
   .st\:mt-0 {
     @media (width >= 440px) {
       margin-top: calc(var(--spacing) * 0);
+    }
+  }
+  .st\:block {
+    @media (width >= 440px) {
+      display: block;
+    }
+  }
+  .st\:hidden {
+    @media (width >= 440px) {
+      display: none;
     }
   }
   .st\:max-w-\[50\%\] {
